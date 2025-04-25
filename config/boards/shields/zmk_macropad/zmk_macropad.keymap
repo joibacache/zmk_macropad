@@ -9,7 +9,7 @@
 #define V_LAY1		2
 #define V_KBCFG		3
 #define V_MAC_SS	LS(LG(N4))
-#define V_WIN_SS	LS(LG(S)))
+#define V_WIN_SS	LS(LG(S))
 #define XX		&trans
 #define V_HOME		&to V_DEFAULT
 
