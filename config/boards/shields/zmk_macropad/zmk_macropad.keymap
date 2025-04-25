@@ -3,6 +3,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+
+#define	DEFAULT	0
+#define	LAYR	1
+#define LAY1	2
+#define KBCFG	3
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -42,66 +48,7 @@
             >;
         };
 	
-	LAY2 {
-	//    -----------------
-	//    | 1 | 2 | 3 | 4 |
-	//    | 5 | 6 | 7 | 8 |
-	//    ----------------
-        
-            bindings = <
-               &kp N1	&kp N2	&kp N3	&kp N4
-	       &kp N5	&kp N6	&kp N7	&kp N8 
-            >;
-        };
-	
-	LAY3 {
-	//    -----------------
-	//    | 1 | 2 | 3 | 4 |
-	//    | 5 | 6 | 7 | 8 |
-	//    ----------------
-        
-            bindings = <
-               &kp N1	&kp N2	&kp N3	&kp N4
-	       &kp N5	&kp N6	&kp N7	&kp N8 
-            >;
-        };
-	
-	LAY4 {
-	//    -----------------
-	//    | 1 | 2 | 3 | 4 |
-	//    | 5 | 6 | 7 | 8 |
-	//    ----------------
-        
-            bindings = <
-               &kp N1	&kp N2	&kp N3	&kp N4
-	       &kp N5	&kp N6	&kp N7	&kp N8 
-            >;
-        };
-
-        LAY5 {
-	//    -----------------
-	//    | 1 | 2 | 3 | 4 |
-	//    | 5 | 6 | 7 | 8 |
-	//    ----------------
-            bindings = <
-               &kp N1	&kp N2	&kp N3	&kp N4
-	       &kp N5	&kp N6	&kp N7	&kp N8 
-            >;
-        };
-	
-        LAY6 {
-	//    -----------------
-	//    | TRNS | TRNS | TRNS | TRNS |
-	//    | TRNS | TRNS | TRNS | TRNS |
-	//    ----------------
-            bindings = <
-               &trans       &trans       &trans       &trans
-	       &trans       &trans       &trans       &trans 
-            >;
-        };
-    	
-	KB_CFG {
-
+	KBCFG {
 	//     ---------------------------
 	//    | BT_1 | BT_2 | BT_3 | BTCL |
 	//    |------+------+------+------|
