@@ -25,7 +25,7 @@
 	//    |  WSSS | LAY6 | LAY7 | TRNS |
 	//    ----------------
             bindings = <
-               &kp LS(LG(4))	&kp F24	&to 4	&to 5
+               &kp LS(LG(N4))	&kp F24	&to 4	&to 5
 	       &kp LG(LS(S))	&to 7	&to 8	&trans 
             >;
         };
