@@ -11,7 +11,7 @@
 #define V_MAC_SS	LS(LG(N4))
 #define V_WIN_SS	LS(LG(S)))
 #define XX		&trans
-#define HOME		&to V_DEFAULT
+#define V_HOME		&to V_DEFAULT
 
 / {
     keymap
@@ -54,7 +54,7 @@
 	//     ----------------------------
 	  bindings = <
                XX	XX	XX	XX
-	       XX	XX	XX	HOME 
+	       XX	XX	XX	V_HOME 
             >;
         };
 	
@@ -67,7 +67,7 @@
 	//     ----------------------------
 	  bindings = <
                &bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_CLR
-	       XX		&out OUT_BLE	&out OUT_USB	HOME
+	       XX		&out OUT_BLE	&out OUT_USB	V_HOME
             >;
         };
     };
