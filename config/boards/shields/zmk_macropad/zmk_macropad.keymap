@@ -4,60 +4,71 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
-#define	DEFAULT	0
-#define	LAYR	1
-#define LAY1	2
-#define KBCFG	3
+#define	V_DEFAULT	0
+#define	V_LAYR		1
+#define V_LAY1		2
+#define V_KBCFG		3
+#define V_MAC_SS	LS(LG(N4))
+#define V_WIN_SS	LS(LG(S)))
+#define XX		&trans
+#define HOME		&to V_DEFAULT
 
 / {
-    keymap {
+    keymap
+    {
         compatible = "zmk,keymap";
 
-        DEFAULT {
+	DEFAULT {
+	//LAYER 0
 	//    ----------------------------
 	//    | MUTE | PREV | VOL+ | NEXT |
+	//    |------+------+------+------|
 	//    | F23  |  F24 | VOL- | LAYR |
-	//			   | PLAY |
+	//    |	     |	    |	   | PLAY |
 	//    ----------------------------
-            bindings = <
+	  bindings = <
                &kp C_MUTE	&kp C_PREV	&kp C_VOL_UP	&kp C_NEXT
-	       &kp F23	&kp F24	&kp C_VOL_DN	&lt 1 C_PLAY_PAUSE 
+	       &kp F23		&kp F24		&kp C_VOL_DN	&lt V_LAYR C_PLAY_PAUSE 
             >;
         };
 
-        LAYR {
-	//    -----------------
-	//    |  MSS  | MICM | LAY3 | LAY4 |
-	//    |  WSSS | LAY6 | LAY7 | TRNS |
-	//    ----------------
-            bindings = <
-               &kp LS(LG(N4))	&kp F24	&to 4	&to 5
-	       &kp LG(LS(S))	&to 7	&to 8	&trans 
+	LAYR {
+	//LAYER 1
+	//     ------------------------------
+	//    | MCSS |  TRNS  | TRNS | KBCFG |
+	//    |------+--------+------+-------|
+	//    | WNSS |  TRNS  | TRNS | TRNS  |
+	//     ------------------------------
+	  bindings = <
+               &kp V_MAC_SS	&trans	&trans	&to V_KBCFG
+	       &kp V_WIN_SS	&trans	&trans	&trans
             >;
         };
 
 	LAY1 {
-	//    -----------------
-	//    | 1 | 2 | 3 | 4 |
-	//    | 5 | 6 | 7 | 8 |
-	//    ----------------
-        
-            bindings = <
-               &kp N1	&kp N2	&kp N3	&kp N4
-	       &kp N5	&kp N6	&kp N7	&kp N8 
+	//LAYER 2
+	//     ----------------------------
+	//    | TRNS | TRNS | TRNS | TRNS  |
+	//    |------+------+------+-------|
+	//    | TRNS | TRNS | TRNS | DF_LY |
+	//     ----------------------------
+	  bindings = <
+               XX	XX	XX	XX
+	       XX	XX	XX	HOME 
             >;
         };
 	
 	KBCFG {
-	//     ---------------------------
-	//    | BT_1 | BT_2 | BT_3 | BTCL |
-	//    |------+------+------+------|
-	//    | TRNS | OBLE | OUSB | TRNS |
-	//     ---------------------------
-
-            bindings = <
+	//LAYER 3
+	//     ----------------------------
+	//    | BT_1 | BT_2 | BT_3 | BTCLR |
+	//    |------+------+------+-------|
+	//    | TRNS | OBLE | OUSB | DF_LY |
+	//     ----------------------------
+	  bindings = <
                &bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_CLR
-	       &trans		&out OUT_BLE	&out OUT_USB	&trans 
+	       XX		&out OUT_BLE	&out OUT_USB	HOME
             >;
-        };};
+        };
+    };
 };
